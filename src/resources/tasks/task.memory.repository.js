@@ -27,7 +27,7 @@ const create = async (task) => {
 
 const update = async (boardId, taskId, task) => {
   taskDB.map(el => {
-    if (el.id === taskId && el.boardId === boardId) {
+    if (el.id === task.id && el.boardId === boardId) {
       el.title = task.title
       el.order = task.order
       el.description = task.description

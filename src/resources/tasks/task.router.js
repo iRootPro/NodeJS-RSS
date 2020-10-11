@@ -33,7 +33,7 @@ router.route('/:boardId/tasks/:taskId').get(async (req, res) => {
   }
 });
 
-router.route('/:boardId/:taskId').put(async (req, res) => {
+router.route('/:boardId/tasks/:taskId').put(async (req, res) => {
   const updateTask = await tasksService.update(req.params.boardId, req.params.taskId, req.body);
   res.json(Task.toResponse(updateTask))
 });
