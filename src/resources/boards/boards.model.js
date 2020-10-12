@@ -4,7 +4,7 @@ class Board {
   constructor({
                 id = uuid(),
                 title = 'title',
-                columns = [],
+                columns = []
               } = {}) {
     this.id = id;
     this.title = title;

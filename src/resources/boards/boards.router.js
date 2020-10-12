@@ -9,27 +9,27 @@ router.route('/').get(async (req, res) => {
 
 router.route('/').post(async (req, res) => {
   const newBoard = await boardsService.create(new Board({ title: req.body.title, columns: [...req.body.columns] }));
-  res.json(Board.toResponse(newBoard))
+  res.json(Board.toResponse(newBoard));
 });
 
 router.route('/:id').get(async (req, res) => {
-  console.log(req.params.id);
   const result = await boardsService.getById(req.params.id);
-  if (typeof result === 'number') res.sendStatus(result)
-  else {
-    res.json(Board.toResponse(result))
+  if (typeof result === 'number') {
+    res.sendStatus(result);
+  } else {
+    res.json(Board.toResponse(result));
   }
 
 });
 
 router.route('/:id').put(async (req, res) => {
   const board = await boardsService.update(req.params.id, req.body);
-  res.json(Board.toResponse(board))
+  res.json(Board.toResponse(board));
 });
 
 router.route('/:id').delete(async (req, res) => {
   const status = await boardsService.remove(req.params.id);
-  res.sendStatus(status)
+  res.sendStatus(status);
 });
 
 module.exports = router;

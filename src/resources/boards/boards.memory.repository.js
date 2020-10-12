@@ -1,5 +1,6 @@
 const boardDB = require('../../common/MemoryDb');
 const taskDB = require('../../common/MemoryDb');
+const tasks = require('../tasks/task.service')
 
 
 const getAll = async () => {
@@ -36,15 +37,15 @@ const update = async (id, board) => {
   return getById(id);
 };
 
-const removeTaskByBoardId = (boardId) => {
-  const idxs = [];
-  taskDB.forEach((task, index) => {
-    if (task.boardId === boardId) idxs.push(index);
-  });
-  idxs.forEach(idx => taskDB.splice(idx, 1));
+const removeTaskByBoardId = async (boardId) => {
+  const ts = await tasks.getAll(boardId)
+  ts.map(task => {
+    tasks.remove(boardId, task.id)
+  })
 };
 
 const remove = async id => {
+
   let idx = -1;
   boardDB.forEach((board, index) => {
     if (board.id === id) {
@@ -52,8 +53,8 @@ const remove = async id => {
     }
   });
   if (idx !== -1) {
+    await removeTaskByBoardId(id)
     boardDB.splice(idx, 1);
-    removeTaskByBoardId(id);
     return 200;
   } else {
     return 404;

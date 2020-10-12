@@ -19,7 +19,6 @@ router.route('/:id/tasks').post(async (req, res) => {
   if (typeof result === 'number') {
     res.sendStatus(result);
   } else {
-    console.log(result);
     res.json(result);
   }
 });
@@ -35,7 +34,7 @@ router.route('/:boardId/tasks/:taskId').get(async (req, res) => {
 
 router.route('/:boardId/tasks/:taskId').put(async (req, res) => {
   const updateTask = await tasksService.update(req.params.boardId, req.params.taskId, req.body);
-  res.json(Task.toResponse(updateTask))
+  res.json(Task.toResponse(updateTask));
 });
 
 router.route('/:boardId/tasks/:taskId').delete(async (req, res) => {
