@@ -126,12 +126,10 @@ describe('Tasks suite', () => {
         .then(res => {
           addedTask = res.body;
         });
-
       const updatedTask = {
         ...addedTask,
         title: 'Autotest updated task'
       };
-
       // Test
       await request
         .put(routes.tasks.update(updatedTask.boardId, updatedTask.id))
