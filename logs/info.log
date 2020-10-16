@@ -1,0 +1,372 @@
+{"message":"App is running on http://localhost:4000","level":"info"}
+{"message":"App is running on http://localhost:4000","level":"info"}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:24:08.272Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:24:55.566Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:25:17.621Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:25:52.196Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:27:36.745Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:29:28.432Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:30:10.358Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:33:17.942Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:34:11.681Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:34:48.284Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:34:53.706Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:35:48.350Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:36:18.936Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:36:50.082Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:49:08.060Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-16T08:50:04.170Z'
+}
+{
+  error: TypeError: app.use() requires a middleware function
+      at Function.use (/Users/sasha/Documents/Code/NodeJS-RSS/node_modules/express/lib/application.js:210:11)
+      at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/app.js:15:5)
+      at Module._compile (internal/modules/cjs/loader.js:1137:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+      at Module.load (internal/modules/cjs/loader.js:985:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:878:14)
+      at Module.require (internal/modules/cjs/loader.js:1025:19)
+      at require (internal/modules/cjs/helpers.js:72:18)
+      at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/server.js:2:13)
+      at Module._compile (internal/modules/cjs/loader.js:1137:30),
+  level: 'error',
+  message: 'uncaughtException: app.use() requires a middleware function\n' +
+    'TypeError: app.use() requires a middleware function\n' +
+    '    at Function.use (/Users/sasha/Documents/Code/NodeJS-RSS/node_modules/express/lib/application.js:210:11)\n' +
+    '    at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/app.js:15:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1137:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:985:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:878:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1025:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:72:18)\n' +
+    '    at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/server.js:2:13)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1137:30)',
+  stack: 'TypeError: app.use() requires a middleware function\n' +
+    '    at Function.use (/Users/sasha/Documents/Code/NodeJS-RSS/node_modules/express/lib/application.js:210:11)\n' +
+    '    at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/app.js:15:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1137:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:985:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:878:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1025:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:72:18)\n' +
+    '    at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/server.js:2:13)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1137:30)',
+  exception: true,
+  date: 'Fri Oct 16 2020 11:55:06 GMT+0300 (Moscow Standard Time)',
+  process: {
+    pid: 32550,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/sasha/Documents/Code/NodeJS-RSS',
+    execPath: '/usr/local/bin/node',
+    version: 'v12.18.3',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/sasha/Documents/Code/NodeJS-RSS/src/server.js'
+    ],
+    memoryUsage: {
+      rss: 50634752,
+      heapTotal: 31199232,
+      heapUsed: 18067752,
+      external: 1495374,
+      arrayBuffers: 201188
+    }
+  },
+  os: {
+    loadavg: [ 1.17236328125, 1.38818359375, 1.4765625 ],
+    uptime: 4215802
+  },
+  trace: [
+    {
+      column: 11,
+      file: '/Users/sasha/Documents/Code/NodeJS-RSS/node_modules/express/lib/application.js',
+      function: 'Function.use',
+      line: 210,
+      method: 'use',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/sasha/Documents/Code/NodeJS-RSS/src/app.js',
+      function: null,
+      line: 15,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1137,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1157,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 985,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 878,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1025,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 72,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: '/Users/sasha/Documents/Code/NodeJS-RSS/src/server.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1137,
+      method: '_compile',
+      native: false
+    }
+  ],
+  timestamp: '2020-10-16T08:55:06.464Z'
+}
+{
+  error: TypeError: app.use() requires a middleware function
+      at Function.use (/Users/sasha/Documents/Code/NodeJS-RSS/node_modules/express/lib/application.js:210:11)
+      at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/app.js:15:5)
+      at Module._compile (internal/modules/cjs/loader.js:1137:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)
+      at Module.load (internal/modules/cjs/loader.js:985:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:878:14)
+      at Module.require (internal/modules/cjs/loader.js:1025:19)
+      at require (internal/modules/cjs/helpers.js:72:18)
+      at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/server.js:2:13)
+      at Module._compile (internal/modules/cjs/loader.js:1137:30),
+  level: 'error',
+  message: 'uncaughtException: app.use() requires a middleware function\n' +
+    'TypeError: app.use() requires a middleware function\n' +
+    '    at Function.use (/Users/sasha/Documents/Code/NodeJS-RSS/node_modules/express/lib/application.js:210:11)\n' +
+    '    at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/app.js:15:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1137:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:985:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:878:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1025:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:72:18)\n' +
+    '    at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/server.js:2:13)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1137:30)',
+  stack: 'TypeError: app.use() requires a middleware function\n' +
+    '    at Function.use (/Users/sasha/Documents/Code/NodeJS-RSS/node_modules/express/lib/application.js:210:11)\n' +
+    '    at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/app.js:15:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1137:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:985:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:878:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1025:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:72:18)\n' +
+    '    at Object.<anonymous> (/Users/sasha/Documents/Code/NodeJS-RSS/src/server.js:2:13)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1137:30)',
+  exception: true,
+  date: 'Fri Oct 16 2020 11:55:24 GMT+0300 (Moscow Standard Time)',
+  process: {
+    pid: 32558,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/sasha/Documents/Code/NodeJS-RSS',
+    execPath: '/usr/local/bin/node',
+    version: 'v12.18.3',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/sasha/Documents/Code/NodeJS-RSS/src/server.js'
+    ],
+    memoryUsage: {
+      rss: 48898048,
+      heapTotal: 31199232,
+      heapUsed: 18064480,
+      external: 1495374,
+      arrayBuffers: 201188
+    }
+  },
+  os: {
+    loadavg: [ 1.8349609375, 1.51708984375, 1.5205078125 ],
+    uptime: 4215820
+  },
+  trace: [
+    {
+      column: 11,
+      file: '/Users/sasha/Documents/Code/NodeJS-RSS/node_modules/express/lib/application.js',
+      function: 'Function.use',
+      line: 210,
+      method: 'use',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/sasha/Documents/Code/NodeJS-RSS/src/app.js',
+      function: null,
+      line: 15,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1137,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1157,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 985,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 878,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1025,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 72,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: '/Users/sasha/Documents/Code/NodeJS-RSS/src/server.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1137,
+      method: '_compile',
+      native: false
+    }
+  ],
+  timestamp: '2020-10-16T08:55:24.571Z'
+}
