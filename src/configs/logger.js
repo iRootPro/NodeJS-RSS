@@ -1,26 +1,55 @@
-const { createLogger, format, transports } = require('express-winston');
+const winston = require('winston');
+const expressWinston = require('express-winston');
 const path = require('path');
 
-module.exports = createLogger({
-  format:
-    format.combine(format.timestamp(), format.simple(),
-      format.prettyPrint()),
+expressWinston.requestWhitelist = ['url', 'query', 'body'];
+
+const requestLogger = expressWinston.logger({
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.json(),
+    winston.format.prettyPrint()
+  ),
   transports: [
-    new transports.Console({
-      level: 'debug',
-      format: format.simple(),
-      colorize: true,
-      json: false,
-      handleExceptions: true
+    new winston.transports.Console({
+      level: 'info',
+      handleExceptions: true,
+      prettyPrint: true
     }),
-    new transports.File({
+    new winston.transports.File({
+      level: 'info',
       maxsize: 512000,
       maxFiles: 3,
       filename: path.join(__dirname, '../../', 'logs', 'info.log'),
-      level: 'info',
-      colorize: true,
-      json: true,
+      handleExceptions: true,
+      format: winston.format.simple()
+    })
+  ],
+  exitOnError: false
+});
+
+process.on('uncaughtException', err => winston.error('uncaught exception: ', err));
+process.on('unhandledRejection', (reason, p) => winston.error('unhandled rejection: ', reason, p));
+
+const errorLogger = expressWinston.errorLogger({
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.json()
+  ),
+  transports: [
+    new winston.transports.Console({
+      level: 'error',
+      handleExceptions: true
+    }),
+    new winston.transports.File({
+      level: 'error',
+      maxsize: 512000,
+      maxFiles: 3,
+      filename: path.join(__dirname, '../../', 'logs', 'error.log'),
       handleExceptions: true
     })
-  ]
+  ],
+  exitOnError: true
 });
+
+module.exports = { request: requestLogger, error: errorLogger };
