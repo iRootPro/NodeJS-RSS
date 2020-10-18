@@ -37,7 +37,7 @@ app.use(logger.error);
 
 
 // throw new Error('Error')
-Promise.reject(Error('Oops!'));
+// Promise.reject(Error('Oops!'));
 
 
 
