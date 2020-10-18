@@ -14,8 +14,7 @@ const requestLogger = expressWinston.logger({
     new winston.transports.Console({
       level: 'info',
       handleExceptions: true,
-      prettyPrint: true,
-      handleExceptions: true
+      prettyPrint: true
     }),
     new winston.transports.File({
       level: 'info',
@@ -52,11 +51,13 @@ const errorLogger = expressWinston.errorLogger({
   ],
   exceptionHandlers: [
     new winston.transports.File({
-      filename: path.join(__dirname, '../../', 'logs', 'error.log') })
+      filename: path.join(__dirname, '../../', 'logs', 'error.log')
+    })
   ],
   rejectionHandlers: [
     new winston.transports.File({
-      filename: path.join(__dirname, '../../', 'logs', 'error.log') })
+      filename: path.join(__dirname, '../../', 'logs', 'error.log')
+    })
   ],
   exitOnError: false
 });
