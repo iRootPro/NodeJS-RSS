@@ -9,8 +9,10 @@ const app = express();
 const logger = require('./configs/logger');
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
-process.on('uncaughtException', err => logger.error('uncaught exception: ', err))
-process.on('unhandledRejection', (reason, p) => logger.error('unhandled rejection: ', reason, p))
+process.on('unhandledRejection', (reason, promise) => {
+  throw new Error(reason.stack);
+})
+
 
 app.use(express.json());
 
@@ -36,4 +38,12 @@ app.use((err, req,res,next) => {
 })
 
 app.use(logger.error);
+
+
+
+// throw new Error('Error')
+// Promise.reject(Error('Oops!'));
+
+
+
 module.exports = app;

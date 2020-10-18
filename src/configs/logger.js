@@ -14,7 +14,8 @@ const requestLogger = expressWinston.logger({
     new winston.transports.Console({
       level: 'info',
       handleExceptions: true,
-      prettyPrint: true
+      prettyPrint: true,
+      handleExceptions: true
     }),
     new winston.transports.File({
       level: 'info',
@@ -28,8 +29,6 @@ const requestLogger = expressWinston.logger({
   exitOnError: false
 });
 
-process.on('uncaughtException', err => winston.error('uncaught exception: ', err));
-process.on('unhandledRejection', (reason, p) => winston.error('unhandled rejection: ', reason, p));
 
 const errorLogger = expressWinston.errorLogger({
   format: winston.format.combine(
@@ -49,7 +48,12 @@ const errorLogger = expressWinston.errorLogger({
       handleExceptions: true
     })
   ],
-  exitOnError: true
+  exceptionHandlers: [
+    new winston.transports.File({
+      filename: path.join(__dirname, '../../', 'logs', 'error.log') })
+  ],
+  exitOnError: false
 });
+
 
 module.exports = { request: requestLogger, error: errorLogger };
