@@ -9,11 +9,6 @@ const app = express();
 const logger = require('./configs/logger');
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
-process.on('unhandledRejection', (reason, promise) => {
-  throw new Error(reason.stack);
-})
-
-
 app.use(express.json());
 
 app.use(logger.request);

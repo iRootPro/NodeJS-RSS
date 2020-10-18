@@ -38,17 +38,23 @@ const errorLogger = expressWinston.errorLogger({
   transports: [
     new winston.transports.Console({
       level: 'error',
-      handleExceptions: true
+      handleExceptions: true,
+      handleRejections: true
     }),
     new winston.transports.File({
       level: 'error',
       maxsize: 512000,
       maxFiles: 3,
       filename: path.join(__dirname, '../../', 'logs', 'error.log'),
-      handleExceptions: true
+      handleExceptions: true,
+      handleRejections: true
     })
   ],
   exceptionHandlers: [
+    new winston.transports.File({
+      filename: path.join(__dirname, '../../', 'logs', 'error.log') })
+  ],
+  rejectionHandlers: [
     new winston.transports.File({
       filename: path.join(__dirname, '../../', 'logs', 'error.log') })
   ],
