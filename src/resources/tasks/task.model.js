@@ -1,28 +1,15 @@
-const uuid = require('uuid');
+const { ownMethods } = require('../../utils/toClient');
+const {Schema, model} = require('mongoose')
 
-class Task {
-  constructor({
-                id = uuid(),
-                title = 'title',
-                order = 0,
-                description = 'desc',
-                userId = 'string',
-                boardId = 'string',
-                columnId = 'string'
-              } = {}) {
-    this.id = id;
-    this.title = title;
-    this.order = order;
-    this.description = description;
-    this.userId = userId;
-    this.boardId = boardId;
-    this.columnId = columnId;
-  }
+const taskSchema = new Schema({
+  title: String,
+  order: Number,
+  description: String,
+  userId: String,
+  boardId: String,
+  columnId: String
+})
 
-  static toResponse(task) {
-    const { id, title, order, description, userId, boardId, columnId } = task;
-    return { id, title, order, description, userId, boardId, columnId };
-  }
-}
+ownMethods(taskSchema)
 
-module.exports = Task;
+module.exports = model('Task', taskSchema)

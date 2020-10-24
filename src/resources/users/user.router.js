@@ -4,7 +4,7 @@ const usersService = require('./user.service');
 
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
-  res.json(users.map(User.toResponse));
+  res.status(200).json(users.map(user => user.toClient()))
 });
 
 router.route('/').post(async (req, res) => {
@@ -13,22 +13,24 @@ router.route('/').post(async (req, res) => {
     name: req.body.name,
     password: req.body.password
   }));
-  res.json(User.toResponse(newUser));
+  console.log('newUSer', newUser);
+  res.json(newUser);
 });
 
 router.route('/:id').get(async (req, res) => {
   const user = await usersService.getById(req.params.id);
-  res.json(User.toResponse(user));
+  res.json(user);
 });
 
 router.route('/:id').put(async (req, res) => {
   const updateUser = await usersService.update(req.params.id, req.body);
-  res.json(User.toResponse(updateUser));
+  res.json(updateUser);
 });
 
 router.route('/:id').delete(async (req, res) => {
+
   const status = await usersService.remove(req.params.id);
-  res.json(User.toResponse(status));
+  res.json(status);
 });
 
 module.exports = router;

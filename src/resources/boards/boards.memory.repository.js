@@ -1,63 +1,36 @@
-const boardDB = require('../../common/MemoryDb');
-const taskDB = require('../../common/MemoryDb');
-const tasks = require('../tasks/task.service')
+const tasks = require('../tasks/task.service');
+const Board = require('./boards.model');
 
 
-const getAll = async () => {
-  return boardDB;
-};
+const getAll = async () => Board.find();
 
 
 const getById = async id => {
-  let idx = -1;
-  boardDB.forEach((board, index) => {
-    if (board.id === id) {
-      idx = index;
-    }
-  });
-  if (idx !== -1) {
-    return boardDB[idx];
-  } else {
-    return 404;
+  const board = await Board.findOne({ _id: id });
+  if (!board) {
+    return 404
   }
+  return board;
 };
 
 const create = async board => {
-  boardDB.push(board);
-  return getById(board.id);
+  try {
+    return await board.save();
+  } catch (e) {
+    throw new Error(e);
+  }
 };
 
 const update = async (id, board) => {
-  boardDB.map(el => {
-    if (el.id === id) {
-      el.title = board.title;
-      el.columns = board.columns;
-    }
-  });
-  return getById(id);
-};
-
-const removeTaskByBoardId = async (boardId) => {
-  const ts = await tasks.getAll(boardId)
-  ts.map(task => {
-    tasks.remove(boardId, task.id)
-  })
+  return await Board.findByIdAndUpdate(id, board);
 };
 
 const remove = async id => {
-
-  let idx = -1;
-  boardDB.forEach((board, index) => {
-    if (board.id === id) {
-      idx = index;
-    }
-  });
-  if (idx !== -1) {
-    await removeTaskByBoardId(id)
-    boardDB.splice(idx, 1);
-    return 200;
-  } else {
-    return 404;
+  try {
+    return await Board.deleteOne({ _id: id });
+  }
+  catch (e) {
+    throw new Error(e)
   }
 
 };
