@@ -150,8 +150,8 @@ describe('Boards suite', () => {
         .delete(routes.boards.delete(boardId))
         .then(res => expect(res.status).oneOf([200, 204]));
 
-      await request.get(routes.boards.getById(boardId)).expect(404);
-    });
+       await request.get(routes.boards.getById(boardId)).expect(404);
+     });
 
     it("should delete board's tasks upon deletion", async () => {
       // Setup:
