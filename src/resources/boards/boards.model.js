@@ -1,20 +1,13 @@
-const uuid = require('uuid');
+const { ownMethods } = require('../../utils/toClient');
+const { Schema, model } = require('mongoose');
 
-class Board {
-  constructor({
-                id = uuid(),
-                title = 'title',
-                columns = []
-              } = {}) {
-    this.id = id;
-    this.title = title;
-    this.columns = columns;
-  }
+const boardSchema = new Schema({
+  title: String,
+  columns: Array
+});
 
-  static toResponse(board) {
-    const { id, title, columns } = board;
-    return { id, title, columns };
-  }
-}
+ownMethods(boardSchema)
 
-module.exports = Board;
+module.exports = model('Board', boardSchema);
+
+

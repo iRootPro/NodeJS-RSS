@@ -1,9 +1,9 @@
-const { request: unauthorizedRequest, routes } = require('../lib');
+const { request: unauthorizedRequest, routes } = require('../../../../../../../Desktop/rs-nodejs/test/e2e/lib');
 const debug = require('debug')('rs:test:boards');
 const {
   createAuthorizedRequest,
   shouldAuthorizationBeTested
-} = require('../utils');
+} = require('../../../../../../../Desktop/rs-nodejs/test/e2e/utils');
 
 const TEST_BOARD_DATA = {
   title: 'Autotest board',
@@ -150,8 +150,8 @@ describe('Boards suite', () => {
         .delete(routes.boards.delete(boardId))
         .then(res => expect(res.status).oneOf([200, 204]));
 
-       await request.get(routes.boards.getById(boardId)).expect(404);
-     });
+      await request.get(routes.boards.getById(boardId)).expect(404);
+    });
 
     it("should delete board's tasks upon deletion", async () => {
       // Setup:
