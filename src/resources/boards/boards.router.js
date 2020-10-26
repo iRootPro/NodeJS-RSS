@@ -14,7 +14,6 @@ router.route('/').post(async (req, res) => {
 
 router.route('/:id').get(async (req, res) => {
   const board = await boardsService.getById(req.params.id);
-  console.log('board', board);
   if (!board) res.sendStatus(404)
   else {
     res.status(200).json(board.toClient())

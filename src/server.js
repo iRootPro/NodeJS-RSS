@@ -1,10 +1,10 @@
-const { PORT } = require('./common/config');
+const { PORT, MONGO_CONNECTION_STRING } = require('./common/config');
 const app = require('./app');
-const mongoose  = require('mongoose');
+const mongoose = require('mongoose');
 
 async function start() {
   try {
-    const url = 'mongodb+srv://rssmongo:rssmongo@cluster0.cnzks.mongodb.net/trello?retryWrites=true&w=majority';
+    const url = MONGO_CONNECTION_STRING;
     await mongoose.connect(url, {
       useNewUrlParser: true,
       useFindAndModify: false,
@@ -19,6 +19,6 @@ async function start() {
   }
 }
 
-start()
+start();
 
 
