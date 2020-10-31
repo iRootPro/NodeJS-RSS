@@ -7,7 +7,7 @@ const getById = id => usersRepo.getById(id);
 const update = (id, user) => usersRepo.update(id, user);
 const remove = async (id) => {
   await usersRepo.remove(id);
-  await taskToNull({userId: id}, {userId: null})
+  await taskToNull({ userId: id }, { userId: null });
 };
 
 module.exports = { getAll, create, getById, update, remove };

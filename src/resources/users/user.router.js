@@ -1,19 +1,28 @@
 const router = require('express').Router();
+const bcrypt = require('bcryptjs');
 const User = require('./user.model');
 const usersService = require('./user.service');
 
+// passport.authenticate('jwt', {session: false})
+
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
-  res.status(200).json(users.map(user => user.toClient()))
+  res.status(200).json(users.map(user => user.toClient()));
+});
+
+router.route('/').get(async (req, res) => {
+  const users = await usersService.getAll();
+  res.status(200).json(users.map(user => user.toClient()));
 });
 
 router.route('/').post(async (req, res) => {
+  const salt = bcrypt.genSaltSync(10);
+  const password = req.body.password;
   const newUser = await usersService.create(new User({
     login: req.body.login,
     name: req.body.name,
-    password: req.body.password
+    password: bcrypt.hashSync(password, salt)
   }));
-  console.log('newUSer', newUser);
   res.json(newUser);
 });
 
