@@ -1,6 +1,7 @@
 const router = require('express').Router({ mergeParams: true });
 const tasksService = require('./task.service');
 const Task = require('./task.model');
+const passport = require('passport');
 
 router.route('/').get(async (req, res) => {
   const tasks = await tasksService.getAll(req.params.boardId);

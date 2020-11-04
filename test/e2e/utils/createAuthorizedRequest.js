@@ -19,6 +19,7 @@ const createAuthorizedRequest = async request => {
     .send({ login: 'admin', password: 'admin' });
 
   const token = `Bearer ${res.body.token}`;
+  console.log('TOKEN', token);
   return createRequestWithToken(request, token);
 };
 
