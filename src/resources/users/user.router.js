@@ -10,10 +10,6 @@ router.route('/').get(async (req, res) => {
   res.status(200).json(users.map(user => user.toClient()));
 });
 
-router.route('/').get(async (req, res) => {
-  const users = await usersService.getAll();
-  res.status(200).json(users.map(user => user.toClient()));
-});
 
 router.route('/').post(async (req, res) => {
   const salt = bcrypt.genSaltSync(10);
